@@ -1,9 +1,12 @@
 pipeline {
     agent any
     stages {
-        stage('Hello World') {
+        stage('Build') {
             steps {
-                echo 'Hello, World!'
+                sh '''
+                    echo "Building the project..."
+                    ./mvnw clean install
+                '''
             }
         }
     }
