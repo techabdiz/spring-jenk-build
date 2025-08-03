@@ -13,7 +13,6 @@ pipeline {
             agent {
                 docker {
                     image 'spring-jenk-build:0.0.1-SNAPSHOT'
-                    args '-p 3000:3000'
                 }
             }
             steps {
