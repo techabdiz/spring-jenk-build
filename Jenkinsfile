@@ -12,9 +12,9 @@ pipeline {
         stage('Test') {
             steps {
                 sh '''
-                    docker run --rm -d -p 8080:8080 spring-jenk-build:0.0.1-SNAPSHOT
+                    docker run --rm -d -p 3000:3000 spring-jenk-build:0.0.1-SNAPSHOT
                     echo "Running tests..."
-                    curl http://localhost:8080/hello
+                    curl http://localhost:3000/hello
                 '''
             }
         }
