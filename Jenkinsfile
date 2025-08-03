@@ -5,7 +5,14 @@ pipeline {
             steps {
                 sh '''
                     echo "Building the project..."
-                    ./mvnw clean install
+                    ./mvnw spring-boot:build-image
+                '''
+            }
+        }
+        stage('Test') {
+            steps {
+                sh '''
+                    docker images
                 '''
             }
         }
